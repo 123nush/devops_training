@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: first-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: first-app
+  template:
+    metadata:
+      labels:
+        app: first-app
+    spec:
+      containers:
+      - name: first-app
+        image: 123nush/first:1.0
+        ports:
+        - containerPort: 8080
